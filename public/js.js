@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage(savedLang);
 
     // Display menu
-    fetch('w3_menu.html')
+    fetch('menu.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('menu_container').innerHTML = html;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     // Display end
-    fetch('w3_end.html')
+    fetch('end.html')
         .then(response => response.text())
         .then(html => document.getElementById('end_container').innerHTML = html);
 
