@@ -135,16 +135,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
         thumbnails[0].classList.add("selected");
     }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        const message_sent = document.getElementById('message_sent');
-        const contact_form = document.getElementById('contact_form');
-
-        if (message_sent && contact_form) {
-            setTimeout(() => {
-                message_sent.style.display = 'none';
-                contact_form.style.display = 'block';
-            }, 1000);
-        }
-    })
 });
