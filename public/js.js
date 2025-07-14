@@ -51,18 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoMenu = document.getElementById('logo');
     if (logoMenu) {
         logoMenu.addEventListener('click', () => {
-            window.location.href = "home.php";
+            window.location.href = "home.html";
         });
     }
 
     // Menu
     const navItems = [
-        { id: 'aboutHeadingMenu', url: 'about.php' },
-        { id: 'teachersHeading', url: 'teachers.php' },
-        { id: 'lessonsHeading', url: 'lessons.php' },
-        { id: 'productsHeading', url: 'products.php' },
-        { id: 'stageHeading', url: 'stage.php' },
-        { id: 'contactHeading', url: 'contact.php' }
+        { id: 'aboutHeadingMenu', url: 'about.html' },
+        { id: 'teachersHeading', url: 'teachers.html' },
+        { id: 'lessonsHeading', url: 'lessons.html' },
+        { id: 'productsHeading', url: 'products.html' },
+        { id: 'stageHeading', url: 'stage.html' },
+        { id: 'contactHeading', url: 'contact.html' }
     ];
 
     navItems.forEach(({ id, url }) => {
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutLearnMore = document.getElementById('about_learn_more');
     if (aboutLearnMore) {
         aboutLearnMore.addEventListener('click', () => {
-            window.location.href = "about.php";
+            window.location.href = "about.html";
         });
     }
 
