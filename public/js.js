@@ -1,14 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Display menu
-    fetch('menu.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('menu_container').innerHTML = html);
-
-    // Display end
-    fetch('end.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('end_container').innerHTML = html);
-    
     // Language toggle
     function setLanguage(lang) {
         localStorage.setItem('language', lang);
@@ -28,14 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem('language') || 'en';
     setLanguage(savedLang);
 
-    const toggleButton = document.getElementById('toggleLanguage');
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            const newLang = localStorage.getItem('language') === 'zh' ? 'en' : 'zh';
-            setLanguage(newLang);
+    // Display menu
+    fetch('w3_menu.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('menu_container').innerHTML = html;
+            
+            // Toggle language button
+            const toggleButton = document.getElementById('toggleLanguage');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    const newLang = localStorage.getItem('language') === 'zh' ? 'en' : 'zh';
+                    setLanguage(newLang);
+                });
+            }
         });
-    }
-
     // Back to top
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
