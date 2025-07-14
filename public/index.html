@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SAS Percussion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <!-- Menu -->
+    <div id="menu_container"></div>
+    <script src="js.js" defer></script>
+
+    <!-- Video -->
+    <video autoplay muted loop playsinline id="backgroundVideo">
+        <source src="videos/gushi_short.mp4" type="video/mp4">
+    </video>
+
+    <!-- About - Homepage -->
+    <section class="about">
+        <section class="heading">
+            <h2 id="about_home" data-en="ABOUT" data-zh="关于">ABOUT</h2>
+        </section>
+
+        <section class="about_text">
+            <div class="text_container">
+                <p id="about_home_text" data-en="Chinese Percussion from the Shenyang Conservatory of Music. Based in Melbourne, Australia, it is one of the region's premier percussion studios, dedicated to developing high-level Chinese traditional percussion ensembles and Western percussion groups.\n\nStudents of SAS Studio Percussion perform as percussionists in many of Melbourne's top schools and youth symphony orchestras. Over the years, SAS has held numerous large-scale concerts featuring both traditional Chinese and Western percussion, as well as intensive student-teacher performances and showcases.\n\nOur curriculum covers essential percussion techniques (snare drum, drum kit, etc.), traditional Chinese percussion (such as Tanggu, flowerpot drums, and the five-tone drum set), and Western percussion (including marimba and timpani). We support a wide range of examination systems, including Rock School, AMEB Percussion, VCE, and university-level percussion exams in Melbourne. The studio is fully equipped with advanced percussion instruments and a professional stage setup featuring lighting, sound, and multimedia systems." 
+                                        data-zh="SAS打击乐教研室/SAS Studio Percussion创办与2018年, 由沈阳音乐学院民族打击乐专业毕业的汪迪创办, 为澳洲墨尔本地区顶级打击乐工作室。打造高质量高水平的中国民族打击乐演奏团队以及西洋打击乐器合奏。\n\nSAS打击乐教研室的学生们均在墨尔本各个名校以及各个青年交响乐团担任打击乐演奏员, 多年来SAS打击乐在墨尔本举办了多场关于民族打击乐与西洋打击乐的大型音乐会。以及高强度的师生音乐会以及汇报演出。\n\nSAS打击乐教研室教学涵盖了打击乐基本功(小军鼓架子鼓等)、民族打击乐(大堂鼓花盆鼓五音排鼓等)、西洋打击乐(马林巴、定音鼓等), 支持的考级涵盖Rock School/AMEB Percussion/VCE/墨尔本各个大学的打击乐专业考试。本教研室拥有齐全高端的打击乐设备。以及专业的舞美声光电舞台。">
+                                        Chinese Percussion from the Shenyang Conservatory of Music. Based in Melbourne, Australia, it is one of the region's premier percussion studios, dedicated to developing high-level Chinese traditional percussion ensembles and Western percussion groups.<br><br>Students of SAS Studio Percussion perform as percussionists in many of Melbourne's top schools and youth symphony orchestras. Over the years, SAS has held numerous large-scale concerts featuring both traditional Chinese and Western percussion, as well as intensive student-teacher performances and showcases.<br><br>Our curriculum covers essential percussion techniques (snare drum, drum kit, etc.), traditional Chinese percussion (such as Tanggu, flowerpot drums, and the five-tone drum set), and Western percussion (including marimba and timpani). We support a wide range of examination systems, including Rock School, AMEB Percussion, VCE, and university-level percussion exams in Melbourne. The studio is fully equipped with advanced percussion instruments and a professional stage setup featuring lighting, sound, and multimedia systems.
+                </p>
+                <button id="about_learn_more" data-en="LEARN MORE" data-zh="更多">LEARN MORE</button> 
+            </div>
+            <div class="image_container">
+                <img id="about_home_image" src="images/Logo.webp" alt="Placeholder Image"/>
+            </div>
+        </section>
+    </section>
+
+    <!-- Info Interlude -->
+     <section class="home_info">
+        <div class="info">
+            <div class="info_entry">
+                <img src="images/InfoImageBlue.webp" alt="Info Image">
+                <h3 class="needs_padding" data-en="Diverse Percussion Instruction"
+                                         data-zh="多样化打击乐授课">
+                                         Diverse Percussion Instruction
+                </h3>
+                <p data-en="Pop Percussion / Western Percussion / Traditional Chinese Percussion\nPercussion Instruction · Drum Lessons · Drum Kit Training"
+                   data-zh="流行打击乐 / 西洋打击乐 / 民族打击乐\n打击乐教学 drum lesson 架子鼓教学">
+                   Pop Percussion / Western Percussion / Traditional Chinese Percussion<br>Percussion Instruction · Drum Lessons · Drum Kit Training
+                </p>
+            </div>
+            <div class="info_entry">
+                <img src="images/InfoImageRed.webp" alt="Info Image">
+                <h3 class="needs_padding" data-en="Top-Tier Hardware System"
+                                          data-zh="顶级硬件体系">
+                                          Top-Tier Hardware System
+                </h3>
+                <p data-en="SAS Studio Percussion exclusively selects top-tier percussion instruments for its hardware equipment.\nPercussion teaching · Drum lessons · Drum kit instruction"
+                   data-zh="SAS 打击乐教研室硬件设备均选用顶级打击乐器\n打击乐教学 drum lesson 架子鼓教学">
+                   SAS Studio Percussion exclusively selects top-tier percussion instruments for its hardware equipment.<br>Percussion teaching · Drum lessons · Drum kit instruction
+                </p>
+            </div>
+        </div>
+     </section>
+
+     <!-- Students -->
+     <section class="students">
+        <section class="heading">
+            <h2 data-en="SAS STUDENTS"
+                data-zh="SAS 学员风采">
+                SAS STUDENTS
+            </h2>
+        </section>
+        <section class="content">
+            <section class="videos">
+                <div class="main_video">
+                    <iframe width="1120" height="630" src="https://www.youtube.com/embed/OCHJp6aMzsk?si=84ARMBwwRspTU6rc&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="row_videos">
+                    <img src="images/Logo.webp" alt="Placeholder Image" data-video-id="OCHJp6aMzsk"/>
+                    <img src="images/Logo.webp" alt="Placeholder Image" data-video-id="SNMnR8ZZa5A"/>
+                    <img src="images/Logo.webp" alt="Placeholder Image" data-video-id="YxBX4bnWWuU"/>
+                    <img src="images/Logo.webp" alt="Placeholder Image" data-video-id="P9Hr7KGM6hY"/>
+                </div>
+            </section>
+        </section>
+     </section>
+    <!-- End -->
+    <div id="end-container"></div>>
+</body>
