@@ -395,6 +395,9 @@ p {
 #teachers_heading {
     padding-top: 8rem;
 }
+.teachers {
+    padding: auto 2rem;
+}
 .teacher {
     display: flex;
     align-items: center;
