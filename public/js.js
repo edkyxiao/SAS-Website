@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {  
     // Language toggle
     function setLanguage(lang) {
         localStorage.setItem('language', lang);
@@ -32,7 +32,44 @@ document.addEventListener("DOMContentLoaded", () => {
                     setLanguage(newLang);
                 });
             }
+
+            // Menu
+            const navItems = [
+                { id: 'aboutHeadingMenu', url: 'about.html' },
+                { id: 'teachersHeading', url: 'teachers.html' },
+                { id: 'lessonsHeading', url: 'lessons.html' },
+                { id: 'productsHeading', url: 'products.html' },
+                { id: 'stageHeading', url: 'stage.html' },
+                { id: 'contactHeading', url: 'contact.html' }
+            ];
+
+            navItems.forEach(({ id, url }) => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener("click", () => {
+                        window.location.href = url;
+                    });
+                }
+            });
+
+            const toggleBtn = document.getElementById("menuToggle");
+            const menu = document.getElementById("menuMore");
+            const title = document.getElementById("title");
+            if (toggleBtn && menu) {
+                toggleBtn.addEventListener("click", function () {
+                    menu.classList.toggle("show");
+                    title.classList.toggle("hide");
+                });
+            } else {
+                console.error("menuToggle or menuMore not found.");
+            }
         });
+
+    // Display end
+    fetch('w3_end.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('end_container').innerHTML = html);
+
     // Back to top
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
@@ -50,37 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
         logoMenu.addEventListener('click', () => {
             window.location.href = "home.html";
         });
-    }
-
-    // Menu
-    const navItems = [
-        { id: 'aboutHeadingMenu', url: 'about.html' },
-        { id: 'teachersHeading', url: 'teachers.html' },
-        { id: 'lessonsHeading', url: 'lessons.html' },
-        { id: 'productsHeading', url: 'products.html' },
-        { id: 'stageHeading', url: 'stage.html' },
-        { id: 'contactHeading', url: 'contact.html' }
-    ];
-
-    navItems.forEach(({ id, url }) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.addEventListener("click", () => {
-                window.location.href = url;
-            });
-        }
-    });
-
-    const toggleBtn = document.getElementById("menuToggle");
-    const menu = document.getElementById("menuMore");
-    const title = document.getElementById("title");
-    if (toggleBtn && menu) {
-        toggleBtn.addEventListener("click", function () {
-            menu.classList.toggle("show");
-            title.classList.toggle("hide");
-        });
-    } else {
-        console.error("menuToggle or menuMore not found.");
     }
 
     // About, learn more
