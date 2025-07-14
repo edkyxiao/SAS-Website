@@ -81,17 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.text())
         .then(html => document.getElementById('end_container').innerHTML = html);
 
-    // Back to top
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            backToTop.style.display = window.scrollY > 400 ? 'block' : 'none';
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
     // Logo to home
     const logoMenu = document.getElementById('logo');
     if (logoMenu) {
