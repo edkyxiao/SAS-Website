@@ -226,7 +226,7 @@ p {
     align-items: center;
 }
 #about_home_image {
-    width: 400px;
+    width: 500px;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
