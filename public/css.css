@@ -43,6 +43,10 @@ p {
 .image_container {
     flex-shrink: 0;
 }
+.for_more_info {
+    text-align: center;
+    padding-bottom: 4rem;
+}
 
 /* Menu */
 .menu-toggle {
