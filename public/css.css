@@ -221,7 +221,7 @@ p {
     flex-direction: row;
     align-items: flex-start; /* align tops of text and image */
     gap: 2rem;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 3rem 4rem;
     flex-wrap: wrap;
     align-items: center;
 }
