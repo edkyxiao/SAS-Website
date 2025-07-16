@@ -204,8 +204,8 @@ p {
 
 /* Home */
 #backgroundVideo {
-    width: 100%;
-    height: auto;
+    height: 95%;
+    width: auto;
     display: block;
 }
 @media (max-width: 768px) {
