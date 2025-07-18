@@ -325,17 +325,20 @@ p {
   cursor: pointer;
 }
 @media (max-width: 768px) {
+    .main_video {
+        margin: 0 auto 1rem auto;
+        width: 95%;
+    }
+
     .row_videos {
         margin-left: 0;
         justify-content: center;
+        flex-wrap: wrap;
     }
+
     .row_videos img {
-        width: 60px; /* optional: make thumbnails a bit smaller */
+        width: 60px;
     }
-}
-.row_videos {
-    flex-wrap: nowrap;
-    overflow-x: auto;
 }
 
 /* About - About */
