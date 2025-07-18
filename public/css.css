@@ -324,6 +324,20 @@ p {
   border-radius: 8px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+    .row_videos {
+        margin-left: 0;
+        justify-content: center;
+    }
+    .row_videos img {
+        width: 60px; /* optional: make thumbnails a bit smaller */
+    }
+}
+.row_videos {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
 /* About - About */
 #about_home_heading {
     padding-top: 8rem;
