@@ -325,9 +325,12 @@ p {
   cursor: pointer;
 }
 @media (max-width: 768px) {
-    .main_video {
+    .main_video iframe,
+    .main_video video{
         margin: 0 auto 1rem auto;
-        width: 95%;
+        width: 90vw;
+        max-width: 90vw;
+        height: auto;
     }
 
     .row_videos {
