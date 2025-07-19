@@ -529,6 +529,9 @@ p {
     text-align: center;
     color: wheat;
 }
+.product h3 {
+    font-weight: normal;
+}
 /* Hide prices */
 .product p {
     display: none;
