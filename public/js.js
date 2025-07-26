@@ -124,4 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         thumbnails[0].classList.add("selected");
     }
+
+    // Products
+    const drumsticks = document.getElementById('drumsticks');
+    if (drumsticks) {
+        drumsticks.addEventListener('click', () => {
+            window.location.href = "drumsticks.html";
+        });
+    }
+    const mallets = document.getElementById('mallets');
+    if (mallets) {
+        mallets.addEventListener('click', () => {
+            window.location.href = "mallets.html";
+        });
+    }
 });
