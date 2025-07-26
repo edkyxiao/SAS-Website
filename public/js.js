@@ -138,4 +138,40 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "mallets.html";
         });
     }
+    const pad = document.getElementById('pad');
+    if (pad) {
+        pad.addEventListener('click', () => {
+            window.location.href = "pad.html";
+        });
+    }
+    const stand = document.getElementById('stand');
+    if (stand) {
+        stand.addEventListener('click', () => {
+            window.location.href = "stand.html";
+        });
+    }
+    const kit_battleship = document.getElementById('kit_battleship');
+    if (kit_battleship) {
+        kit_battleship.addEventListener('click', () => {
+            window.location.href = "kit_battleship.html";
+        });
+    }
+    const kit_studio = document.getElementById('kit_studio');
+    if (kit_studio) {
+        kit_studio.addEventListener('click', () => {
+            window.location.href = "kit_studio.html";
+        });
+    }
+    const kit_artist = document.getElementById('kit_artist');
+    if (kit_artist) {
+        kit_artist.addEventListener('click', () => {
+            window.location.href = "kit_artist.html";
+        });
+    }
+    const video = document.getElementById('video');
+    if (video) {
+        video.addEventListener('click', () => {
+            window.location.href = "video.html";
+        });
+    }
 });
