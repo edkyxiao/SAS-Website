@@ -523,24 +523,35 @@ p {
     padding: 1rem;
 }
 .product {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    color: wheat;
-}
-.product h3 {
-    font-weight: normal;
-}
-/* Hide prices */
-.product p {
-    display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  color: wheat;
+  text-align: center;
+  height: 100%; /* Ensure cards can stretch evenly */
 }
 .product img {
     width: 100%;
-    height: auto;
-    max-width: 180px;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#need_centre {
+    top: 50;
+    transform: translateY(50%);
+    margin: 5rem 2rem;
+}
+.product h3 {
+    font-weight: normal;
+    top: 75%;
+    transform: translateY(-75%);
+}
+.product p {
+    display: none;
 }
 .product:hover {
     transform: scale(1.03);
