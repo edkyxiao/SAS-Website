@@ -17,6 +17,12 @@ body {
     margin-bottom: 2rem;
     padding-top: 8rem;
 }
+.heading2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
 .content {
     background-color: black;
     width: 100%;
