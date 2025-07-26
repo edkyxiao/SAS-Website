@@ -15,6 +15,7 @@ body {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    padding-top: 8rem;
 }
 .content {
     background-color: black;
@@ -48,15 +49,13 @@ p {
     padding-bottom: 4rem;
 }
 .coming_soon {
-    padding-top: 10rem;
-    padding-bottom: 4rem;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-.heading {
-    padding-top: 8rem;
-}
+
 
 /* Menu */
 .menu-toggle {
@@ -355,10 +354,6 @@ p {
 }
 
 /* About - About */
-#about_home_heading {
-    padding-top: 8rem;
-}
-
 #about_home_about {
     padding-top: 8rem;
 }
@@ -426,9 +421,6 @@ p {
 }
 
 /* Teachers */
-#teachers_heading {
-    padding-top: 8rem;
-}
 .teachers {
     padding: auto 2rem;
 }
@@ -473,9 +465,6 @@ p {
 } 
 
 /* Lessons */
-#lessons_heading {
-    padding-top: 8rem;
-}
 .lesson_types {
     display: flex;
     justify-content: space-evenly; 
@@ -499,9 +488,6 @@ p {
 }
 
 /* Products */
-#product_heading {
-    padding-top: 8rem;
-}
 .product-type {
     font-size: 1.75rem;
     font-weight: 300;
@@ -540,7 +526,8 @@ p {
     max-width: 1200px;     /* Or whatever you prefer */
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
 }
 .product {
   display: flex;
@@ -578,9 +565,6 @@ p {
 }
 
 /* Stage Hire */
-#stage_heading {
-    padding-top: 8rem;
-}
 #stage_info {
     padding: 2rem 10rem 2rem;
 }
@@ -611,9 +595,6 @@ p {
 }
 
 /* Contact */
-#contact_heading {
-    padding-top: 8rem;
-}
 .contact_container {
     display: flex;
     justify-content: space-between;
