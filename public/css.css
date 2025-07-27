@@ -560,6 +560,7 @@ p {
     top: 75%;
     transform: translateY(-75%);
 }
+/* Hide prices */
 .product p {
     display: none;
 }
