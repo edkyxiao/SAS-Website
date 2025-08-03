@@ -575,7 +575,7 @@ p {
 .stage_layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 2rem;
@@ -587,15 +587,43 @@ p {
     flex: 1 1 40%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 2rem;
-    margin-left: 15rem;
+    gap: 3rem;
+    padding-top: 7rem;
+    padding-bottom: 12rem;
+    padding-right: 10rem;
 }
 .stage_images img {
-    width:50%;
+    width:100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+}
+#mode-image {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+.image-wrapper {
+    position: relative;
+    display: block;
+}
+#toggle-image-mode {
+    position: absolute;
+    top: 10px;     /* Adjust how far above the image you want it */
+    right: 10px;   /* Adjust for alignment */
+    background: grey;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+}
+#toggle-image-mode img {
+    width: 40px;
+    display: block;
+}
+#toggle-image-mode:hover {
+    background-color: #555;
+    transform: scale(1.05);
 }
 
 /* Contact */
