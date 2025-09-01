@@ -627,6 +627,9 @@ p {
 }
 
 /* Contact */
+#contact_heading {
+    padding-top: 2rem;
+}
 .contact_container {
     display: flex;
     justify-content: space-between;
@@ -1053,5 +1056,6 @@ fieldset {
         width: 50%;
     }
 }
+
 
 
