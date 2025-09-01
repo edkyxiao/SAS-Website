@@ -136,7 +136,7 @@ p {
 .menu-overlay h2 {
     cursor: pointer;
     position: relative;
-    font-weight: 100;
+    font-weight: normal;
     letter-spacing: 2px;
     margin: 1rem;
 }
@@ -1054,6 +1054,7 @@ fieldset {
         width: 50%;
     }
 }
+
 
 
 
