@@ -145,18 +145,24 @@ p {
     transition: filter 0.3s ease;
 }
 #toggleLanguage {
+    display: flex;                
+    justify-content: center;      
+    align-items: center;       
     background-color: #222;
-    color: wheat;
-    border: 1px solid #555;
+    color: rgb(238, 225, 202);
+    border: 1px outset #555;
     border-radius: 5px;
-    padding: 0.3rem 0.7rem;
+    padding: .5rem 1rem;            
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     position: absolute;
     top: 0.75rem;
     right: 5rem;
     height: 30px;
-    width: auto;
+}
+#toggleLanguage:hover {
+    background-color: #444;
+    transition: filter 0.3s ease;
 }
 #toggleLanguage:hover {
     background-color: #444;
@@ -1054,6 +1060,7 @@ fieldset {
         width: 50%;
     }
 }
+
 
 
 
