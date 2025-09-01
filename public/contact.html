@@ -14,26 +14,28 @@
     </section>
     <section class="content">
         <div class="contact_container">
-            <div class="form">
-                <div id="message_sent">
-                    <p data-en="Message Sent" data-zh="发送成功">Message Sent</p>
+            <form
+                action="https://formspree.io/f/xdkldeww"
+                class="fs-form contact_form"
+                target="_top"
+                method="POST"
+                >
+                <div class="fs-field">
+                    <label class="fs-label" data-en="Name" data-zh="姓名" for="name">Name</label>
+                    <input class="fs-input" id="name" name="name" />
                 </div>
-                <!-- Form -->
-                <div id="contact_form">
-                    <form id="contact_form">
-                        <label for="name" data-en="Full Name: " data-zh="姓名: ">Full Name: </label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email" data-en="Email: " data-zh="邮箱地址： ">Email:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="message" data-en="Message: " data-zh="信息： ">Message: </label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-
-                        <button type="submit" data-en="Send" data-zh="发送">Send</button>
-                    </form>
+                <div class="fs-field">
+                    <label class="fs-label" data-en="Email" data-zh="邮箱地址" for="email">Email</label>
+                    <input class="fs-input" id="email" name="email" required />
                 </div>
-            </div>
+                <div class="fs-field">
+                    <label class="fs-label" data-en="Message" data-zh="信息" for="message">Message</label>
+                    <textarea class="fs-textarea" id="message" name="message" rows="6"></textarea>
+                </div>
+                <div class="fs-button-group">
+                    <button class="fs-button" data-en="Send" data-zh="发送" type="submit">Send</button>
+                </div>
+            </form>
             <div id="contact_info">
                 <h3 class="contact_subheading" data-en="Wechat" data-zh="微信">Wechat</h3>
                 <p>Julyforwhat<br>balldandy</p>
