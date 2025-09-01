@@ -15,7 +15,7 @@ body {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 2rem;
-    padding-top: 8rem;
+    padding-top: 10rem;
 }
 .heading2 {
     text-align: center;
@@ -627,9 +627,6 @@ p {
 }
 
 /* Contact */
-#contact_heading {
-    padding-top: 2rem;
-}
 .contact_container {
     display: flex;
     justify-content: space-between;
@@ -1056,6 +1053,7 @@ fieldset {
         width: 50%;
     }
 }
+
 
 
 
