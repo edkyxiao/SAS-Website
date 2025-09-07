@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="menu_container"></div>
-    <script src="about.js" defer></script>
+    <script src="js.js" defer></script>
     <section class="about-us">
         <section class="about">
             <section class="heading">
@@ -31,16 +31,10 @@
         <section class="heading2">
             <h2 id="timeline_about" data-en="TIMELINE" data-zh="时间线">TIMELINE</h2>
         </section>
-        <div class="background">
         <div class="timeline">
-            <div class="timeline_col1">
-                <img id="tl_img_1" class="fade_image" src="images/2018.webp">
-                <img id="tl_img_3" class="fade_image" src="images/2021.webp">
-                <img id="tl_img_5" class="fade_image" src="images/2023.webp">
-                <img id="tl_img_7" class="fade_image" src="images/2025.webp">
-            </div>
-            <div class="timeline_col2">
-                <div class="tl_entry">
+            <div class="entries">
+                <div class="timeline-entry">
+                    <img src="images/2018.webp" alt="2018 Image"/>
                     <h3 id="timelineTitle2018" data-en="2018 - Founding of SAS Percussion Studio"
                                             data-zh="2018年 SAS 打击乐教研室成立">
                                             2018 - Founding of SAS Percussion Studio
@@ -50,7 +44,8 @@
                                             Since its founding in 2018, SAS Percussion Studio has been committed to delivering high-standard percussion education. We utilize world-class percussion instruments, provide expert guidance for percussion grade examinations, and host high-quality concerts. Our work has significantly contributed to the percussion education scene in Melbourne, offering professional drum lessons and drum kit instruction.
                                             </p>
                 </div>
-                <div class="tl_entry">
+                <div class="timeline-entry">
+                    <img src="images/2019.webp" alt="2019 Image"/>
                     <h3 id="timelineTitle2019" data-en="2019 - Melbourne's First Chinese Traditional Percussion Concert"
                                             data-zh="2019年 墨尔本第一届民族打击乐专场音乐会">
                                             2019 - Melbourne's First Chinese Traditional Percussion Concert
@@ -60,7 +55,8 @@
                                             We proudly presented Melbourne's first dedicated concert of traditional Chinese percussion. The event showcased the richness of ethnic percussion through carefully curated repertoire, refined performances, and meticulous sound engineering — offering an exceptional and immersive cultural experience.
                     </p>
                 </div>
-                <div class="tl_entry">
+                <div class="timeline-entry">
+                    <img src="images/2021.webp" alt="2021 Image"/>
                     <h3 id="timelineTitle2021" data-en="2021 - SAS Inaugural Student-Teacher Percussion Concert"
                                             data-zh="2021年 SAS第一届打击乐师生音乐会">
                                             2021 - SAS Inaugural Student-Teacher Percussion Concert
@@ -70,7 +66,8 @@
                                             We proudly presented Melbourne's first dedicated concert of traditional Chinese percussion. The event showcased the richness of ethnic percussion through carefully curated repertoire, refined performances, and meticulous sound engineering — offering an exceptional and immersive cultural experience.
                     </p>
                 </div>
-                <div class="tl_entry">
+                <div class="timeline-entry">
+                    <img src="images/2022.webp" alt="2022 Image"/>
                     <h3 id="timelineTitle2022" data-en="2022 - Melbourne's Second Chinese Traditional Percussion Concert"
                                             data-zh="2022年 墨尔本第二届民族打击乐专场音乐会">
                                             2022 - Melbourne's Second Chinese Traditional Percussion Concert
@@ -80,7 +77,8 @@
                                             Continuing our tradition of excellence, the second ethnic percussion concert once again delivered a flawless showcase of Chinese traditional percussion. From musical selections and performance quality to sound production, every detail was executed to perfection. The event also featured world-class percussion instruments, further elevating the audience experience.
                     </p>
                 </div>
-                <div class="tl_entry">
+                <div class="timeline-entry">
+                    <img src="images/2023.webp" alt="2023 Image"/>
                     <h3 id="timelineTitle2023" data-en="2023 - SAS Second Student-Teacher Percussion Concert"
                                             data-zh="2023年 墨尔本第二届打击乐师生音乐会">
                                             2023 - SAS Second Student-Teacher Percussion Concert
@@ -90,7 +88,8 @@
                                             Co-created by SAS teachers and students, this concert featured a diverse mix of Western, ethnic, and pop percussion music. For the first time, the performance incorporated professional-level lighting and audiovisual effects, creating an immersive sensory experience for the audience.
                     </p>
                 </div>
-                <div class="tl_entry">
+                <div class="timeline-entry">
+                    <img src="images/2024.webp" alt="2024 Image"/>
                     <h3 id="timelineTitle2024" data-en="2024 - Launch of the SAS Percussion Stage"
                                             data-zh="2024年 SAS打击乐声光电舞台建成">
                                             2024 - Launch of the SAS Percussion Stage
@@ -100,23 +99,7 @@
                                             SAS proudly launched its state-of-the-art performance stage in 2024, enhancing our teaching model by integrating real stage experience into students' learning journey. After a period of training, every student has the opportunity to perform on the SAS Stage, equipped with world-class stage design and lighting technology — preparing them for professional-level performances.
                     </p>
                 </div>
-                <div class="tl_entry">
-                    <h3 id="timelineTitle2025" data-en="2025 - Melbourne's Second Chinese Traditional Percussion Concert"
-                                            data-zh="2025年 墨尔本第三届民族打击乐专场音乐会">
-                                            2025 - Melbourne's Second Chinese Traditional Percussion Concert
-                    </h3>
-                    <p id="timelineText2025" data-en="Continuing our tradition of excellence, the third ethnic percussion concert once again delivered a flawless showcase of Chinese traditional percussion. From musical selections and performance quality to sound production, every detail was executed to perfection. The event also featured world-class percussion instruments, further elevating the audience experience."
-                                            data-zh="展现了中国民族传统专业的打击乐音乐会，在选曲、演奏、现场的音响调控上追求极致的民族打击乐体验，再一次做到了无懈可击，在硬件上均采用了世界顶级的打击乐器 打击乐教学 drum lesson 架子鼓教学">
-                                            Continuing our tradition of excellence, the third ethnic percussion concert once again delivered a flawless showcase of Chinese traditional percussion. From musical selections and performance quality to sound production, every detail was executed to perfection. The event also featured world-class percussion instruments, further elevating the audience experience.
-                    </p>
-                </div>
             </div>
-            <div class="timeline_col3">
-                <img id="tl_img_2" class="fade_image" src="images/2019.webp">
-                <img id="tl_img_4" class="fade_image" src="images/2022.webp">
-                <img id="tl_img_6" class="fade_image" src="images/2024.webp">
-            </div>
-        </div>
         </div>
     </section>
     <!-- End -->

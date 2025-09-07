@@ -247,7 +247,7 @@ p {
     flex-direction: row;
     align-items: flex-start; /* align tops of text and image */
     gap: 2rem;
-    padding: 1.5rem 3rem 4rem;
+    padding: 4rem;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -367,68 +367,78 @@ p {
 }
 
 /* About - About */
-.timeline {
+.background {
     background-color: black;
-    width: 100%;
 }
-.entries {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto; /* 2 rows */
-    gap: 2.5rem 2rem; /* row-gap column-gap */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 0;
-}
-.info_entry {
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.timeline-entry {
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    color: wheat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.timeline-entry img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
-}
-
-.timeline-entry h3 {
-    font-weight: 500;
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-}
-
-.timeline-entry p {
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: #ddd;
-    margin: 0;
-}
-@media (max-width: 900px) {
 .timeline {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    display: grid;
+    grid-template-columns: repeat(3, .8fr);
+    gap: .1rem;
+    margin: 2rem 0rem;
+    padding: 1.5rem 2rem;
+    border: 1px solid black;
 }
-.timeline-entry img {
-    max-width: 100%;
+.timeline img{
+    width: 20vw;
+    border-radius: 5%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+.timeline_col1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: 5rem;
 }
+.tl_entry {
+    padding: 1rem 0rem 2rem;
+}
+.timeline_col2 h2{
+    padding: 0rem;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.timeline_col2 p{
+    font-size: 1.25rem;
+    text-align: justify;
+}
+.tl_entry h3 {
+    margin: 2rem;
+}
+.timeline_col3 {
+    margin-left: 5rem;
+    justify-self: start;
+}
+.fade_image {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade_image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#tl_img_1 {
+    margin-top: 6rem;
+}
+#tl_img_2 {
+    margin-top: 32rem;
+}
+#tl_img_3 {
+    margin-top: 30rem;
+}
+#tl_img_4 {
+    margin-top: 26rem;
+}
+#tl_img_5 {
+    margin-top: 27rem;
+}
+#tl_img_6 {
+    margin-top: 27rem;
+}
+#tl_img_7 {
+    margin-top: 28rem;
+}
+
 
 /* Teachers */
 .teachers {
