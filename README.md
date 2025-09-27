@@ -32,9 +32,9 @@ We welcome contributions to enhance the SAS Percussion Studio website. To contri
 
 ## ⚖️ Copyright
 
-Website design and development by **Edward Xiao**
-Design template by **Zeon Studio**
-Copyright © 2024 **SAS-PERCUSSION** - All Rights Reserved.
+Website design and development by Edward Xiao<br>
+Design template by Zeon Studio<br>
+Copyright © 2024 SAS-PERCUSSION - All Rights Reserved.
 
 ---
 
