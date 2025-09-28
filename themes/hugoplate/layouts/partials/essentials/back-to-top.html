@@ -1,0 +1,50 @@
+<!-- Back to Top Button -->
+<button
+  id="back-to-top"
+  class="font-bold fixed bottom-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-primary-dark dark:bg-darkmode-primary dark:text-darkmode-body transition-opacity duration-300 opacity-0 pointer-events-none z-50"
+  aria-label="Back to top"
+>
+  ↑
+</button>
+
+<style>
+    #back-to-top {
+        transition: color 0.4s ease;
+        transition: background-color 0.3s ease;
+    }
+
+    #back-to-top:hover {
+        color: black;
+        background-color: rgb(155,146,102);
+    }
+
+    .dark #back-to-top:hover {
+        color: white;
+        background-color: rgb(155,146,102);
+    }
+</style>
+
+<script>
+const btn = document.getElementById("back-to-top");
+
+const toggleBtn = () => {
+  if (window.scrollY > 300) {
+    btn.classList.remove("opacity-0", "pointer-events-none");
+    btn.classList.add("opacity-100", "pointer-events-auto");
+  } else {
+    btn.classList.remove("opacity-100", "pointer-events-auto");
+    btn.classList.add("opacity-0", "pointer-events-none");
+  }
+};
+
+// Smooth scroll
+btn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Listen to scroll
+window.addEventListener("scroll", toggleBtn);
+
+// Initialize state
+toggleBtn();
+</script>

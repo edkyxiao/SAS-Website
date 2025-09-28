@@ -1,0 +1,49 @@
+{{ define "main" }}
+<!-- Teachers Section -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="lg:col-12">
+        <!-- Teachers Heading -->
+        <div class="text-center mb-12">
+          <h2 class="h1 mb-4">{{ .Title | markdownify }}</h2>
+        </div>
+        
+        <!-- Teachers Content -->
+        <div class="teachers-container">
+          {{ range $index, $teacher := .Params.teachers }}
+            <div class="teacher-item {{ if modBool $index 2 }}teacher-reverse{{ end }} mb-12">
+              <div class="row items-center">
+                <!-- Image Column -->
+                <div class="md:col-6 {{ if modBool $index 2 }}md:order-2{{ else }}md:order-1{{ end }} mb-8 md:mb-0">
+                  <div class="teacher-image {{ if modBool $index 2 }}text-left{{ else }}text-right{{ end }}">
+                    {{ if .image }}
+                      <div class="teacher-photo-container faded-image">
+                        <img 
+                          src="{{ .image | relURL }}" 
+                          alt="{{ .name }}"
+                          class="teacher-photo"
+                        />
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+                
+                <!-- Content Column -->
+                <div class="md:col-6 {{ if modBool $index 2 }}md:order-1{{ else }}md:order-2{{ end }}">
+                  <div class="teacher-content {{ if modBool $index 2 }}md:pr-8{{ else }}md:pl-8{{ end }}">
+                    <h3 class="h3 mb-4 text-base">{{ .name | markdownify }}</h3>
+                    <div class="teacher-bio text-sm leading-relaxed">
+                      {{ .bio | markdownify }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

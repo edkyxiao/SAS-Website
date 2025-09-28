@@ -1,0 +1,43 @@
+############# Chinese navigation ##############
+
+# main menu
+[[main]]
+name = "关于"
+url = "/zh/about"
+weight = 1
+
+[[main]]
+name = "老师"
+url = "/zh/teachers"
+weight = 2
+
+[[main]]
+name = "课程"
+url = "/zh/lessons"
+weight = 3
+
+[[main]]
+name = "产品"
+url = "/zh/products"
+weight = 4
+
+[[main]]
+name = "舞台"
+url = "/zh/stage"
+weight = 5
+
+[[main]]
+name = "联系"
+url = "/zh/contact"
+weight = 6
+
+
+# footer menu
+[[footer]]
+name = "SAS-PERCUSSION"
+
+[[footer]]
+name = "162 Rooks Rd Nunawading VIC 3131"
+
+[[footer]]
+name = "Copyright © 2024 SAS-PERCUSSION - All Rights Reserved."

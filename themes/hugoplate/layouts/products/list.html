@@ -1,0 +1,57 @@
+{{ define "main" }}
+<!-- Products Section -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="lg:col-12">
+        <!-- Products Heading -->
+        <div class="text-center mb-12">
+          <h2 class="h1 mb-4">{{ .Title | markdownify }}</h2>
+        </div>
+        
+        <!-- Product Categories -->
+        {{ range .Params.product_categories }}
+          <div class="product-category-section mb-16">
+            <h2 class="product-category-title">{{ .category_name | markdownify }}</h2>
+            
+            <div class="product-grid">
+              {{ range .products }}
+                <div class="product-card {{ if .link }}product-clickable{{ end }}" 
+                     {{ if .link }}onclick="window.location.href='{{ .link | relURL }}'"{{ end }}>
+                  <div class="product-image-container">
+                    {{ if .image }}
+                      <img 
+                        src="{{ .image | relURL }}" 
+                        alt="{{ .name }}"
+                        class="product-image"
+                      />
+                    {{ end }}
+                  </div>
+                  
+                  <div class="product-info">
+                    <h3 class="product-name">{{ .name | markdownify }}</h3>
+                    {{ if .show_price }}
+                      <p class="product-price">{{ .price | markdownify }}</p>
+                    {{ end }}
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        
+        <!-- Contact Information -->
+        {{ if .Params.contact_info }}
+          <div class="contact-info-section mt-16">
+            <div class="text-center">
+              <div class="contact-info-card">
+                <p class="contact-text">{{ .Params.contact_info | markdownify }}</p>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,99 @@
+.header {
+  @apply bg-white/60 dark:bg-black/60 backdrop-blur-md py-6;
+}
+
+/* navbar items */
+.navbar {
+  @apply relative flex flex-wrap items-center justify-between;
+}
+
+.logo-img {
+  filter: brightness(80%);
+}
+
+.dark .logo-img {
+  filter: brightness(100%);
+}
+
+.logo-img:hover {
+  filter: brightness(120%);
+  transition: filter 0.3s ease;
+}
+
+.dark .logo-img:hover {
+  filter: brightness(50%);
+  transition: filter 0.3s ease;
+}
+
+.navbar-brand {
+  @apply text-text-dark dark:text-darkmode-text-dark text-xl font-semibold;
+  image {
+    @apply max-h-full max-w-full;
+  }
+}
+
+.navbar-nav {
+  @apply text-center lg:text-left;
+}
+
+.nav-link {
+  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3;
+}
+
+.nav-link:hover {
+  color: rgb(191, 182, 137);
+}
+
+.nav-dropdown {
+  @apply mr-0;
+}
+
+.nav-dropdown > svg {
+  @apply pointer-events-none;
+}
+
+.nav-dropdown.active .nav-dropdown-list {
+  @apply block;
+}
+
+.nav-dropdown-list {
+  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm hidden lg:invisible lg:absolute lg:block lg:opacity-0;
+}
+
+.nav-dropdown-item {
+  @apply [&:not(:last-child)]:mb-2;
+}
+
+.nav-dropdown-link {
+  @apply text-text-dark hover:text-primary dark:text-darkmode-text dark:hover:text-darkmode-primary block py-1 font-semibold transition;
+}
+
+/* All nav items except logo */
+.navbar .nav-link:hover,
+.navbar .nav-dropdown-link:hover,
+.navbar .btn-outline-primary:hover {
+  color: rgb(155,146,102) !important;
+}
+
+/* theme-switcher */
+.theme-switcher {
+  @apply inline-flex;
+
+  label {
+    @apply bg-border relative inline-block h-4 w-6 cursor-pointer rounded-2xl lg:w-10;
+  }
+
+  input {
+    @apply absolute opacity-0;
+  }
+
+  span {
+    @apply bg-dark absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300 dark:bg-white;
+  }
+
+  input:checked + label {
+    span {
+      @apply lg:left-4;
+    }
+  }
+}

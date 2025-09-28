@@ -1,0 +1,14 @@
+{
+  "main": [
+    {
+      "name": "wechat",
+      "icon": "fab fa-weixin",
+      "link": "https://u.wechat.com/EK3DoqZZWqIJ_zXtkKSi-rA"
+    },
+    {
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/edkyxiao/SAS-Website"
+    }
+  ]
+}

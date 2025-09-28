@@ -1,0 +1,52 @@
+{{ define "main" }}
+<!-- Stage Hire Section -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="lg:col-12">
+        <!-- Stage Heading -->
+        <div class="text-center mb-12">
+          <h2 class="h1 mb-4">{{ .Title | markdownify }}</h2>
+        </div>
+        
+        <!-- Stage Description -->
+        {{ if .Params.description }}
+          <div class="stage-description mb-12">
+            <p class="text-lg leading-relaxed text-center max-w-4xl mx-auto">
+              {{ .Params.description | markdownify }}
+            </p>
+          </div>
+        {{ end }}
+        
+        <!-- Stage Layout -->
+        <div class="stage-layout">
+          <!-- Stage Details -->
+          <div class="stage-details">
+            {{ range .Params.stage_sections }}
+              <div class="stage-section mb-8">
+                <h3 class="stage-section-title">{{ .title | markdownify }}</h3>
+                <div class="stage-section-content">
+                  {{ .content | markdownify }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+          
+          <!-- Stage Image -->
+          {{ if .Params.stage_images }}
+            <div class="stage-images">
+              <div class="image-wrapper">
+                <button id="toggle-image-mode" class="image-toggle-btn">
+                  <img id="button-icon" src="{{ .Params.stage_images.toggle_icon_light | relURL }}" alt="toggle mode" />
+                </button>
+                <img id="mode-image" src="{{ .Params.stage_images.light_image | relURL }}" alt="stage lighting" class="stage-main-image" />
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+

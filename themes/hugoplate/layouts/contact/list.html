@@ -1,0 +1,61 @@
+{{ define "main" }}
+<!-- Contact Section -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="lg:col-12">
+        <!-- Contact Heading -->
+        <div class="text-center mb-12">
+          <h2 class="h1 mb-4">{{ .Title | markdownify }}</h2>
+        </div>
+        
+        <!-- Contact Container -->
+        <div class="contact-container">
+          <!-- Contact Form -->
+          <div class="contact-form-section">
+            <form
+              action="{{ .Params.form_action | default "https://formspree.io/f/xdkldeww" }}"
+              class="contact-form"
+              target="_top"
+              method="POST">
+              
+              <div class="form-field">
+                <label class="form-label" for="name">{{ .Params.form_labels.name | default "Name" }}</label>
+                <input class="form-input" id="name" name="name" type="text" required />
+              </div>
+              
+              <div class="form-field">
+                <label class="form-label" for="email">{{ .Params.form_labels.email | default "Email" }}</label>
+                <input class="form-input" id="email" name="email" type="email" required />
+              </div>
+              
+              <div class="form-field">
+                <label class="form-label" for="message">{{ .Params.form_labels.message | default "Message" }}</label>
+                <textarea class="form-textarea" id="message" name="message" rows="10" required></textarea>
+              </div>
+              
+              <div class="form-button-group">
+                <button class="form-button btn btn-primary" type="submit">
+                  {{ .Params.form_labels.submit | default "Send" }}
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="contact-info-section">
+            {{ range .Params.contact_sections }}
+              <div class="contact-info-item">
+                <h3 class="contact-subheading">{{ .title | markdownify }}</h3>
+                <div class="contact-content">
+                  {{ .content | markdownify }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

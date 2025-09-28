@@ -1,0 +1,91 @@
+{{ define "main" }}
+<!-- About Section -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="lg:col-12">
+        <!-- About Heading -->
+        <div class="text-center mb-12">
+          <h2 class="h1 mb-4">{{ .Params.about_title | markdownify }}</h2>
+        </div>
+        
+        <!-- About Content -->
+        <div class="row items-center justify-between">
+          <!-- Text Content -->
+          <div class="md:col-7 lg:col-6 mb-8 md:mb-0">
+            <div class="about-text">
+              {{ .Params.about_content | markdownify }}
+            </div>
+          </div>
+          
+          <!-- Image -->
+          <div class="md:col-5 lg:col-6">
+            <div class="about-image text-center faded-image">
+              {{ if .Params.about_image }}
+                {{ partial "image" (dict "Src" .Params.about_image "Alt" "Group Photo" "DisplayXL" "600x" "DisplayLG" "500x" "DisplayMD" "400x" "Class" "shadow-lg") }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+{{ with .Params.timeline }}
+  {{ if .enable }}
+    <section class="section bg-theme-light dark:bg-darkmode-theme-light">
+      <div class="container">
+        <div class="row">
+          <div class="lg:col-12">
+            <!-- Timeline Heading -->
+            <div class="text-center mb-12">
+              <h2 class="h1 mb-4">{{ .title | markdownify }}</h2>
+            </div>
+            
+            <!-- Timeline Content -->
+            <div class="timeline-container">
+              {{ range $index, $event := .events }}
+                <div class="timeline-item {{ if modBool $index 2 }}timeline-left{{ else }}timeline-right{{ end }} mb-16">
+                  <div class="row items-center">
+                    <!-- Image Column -->
+                    <div class="md:col-6 {{ if modBool $index 2 }}md:order-1{{ else }}md:order-2{{ end }} mb-8 md:mb-0">
+                      <div class="timeline-image flex justify-center">
+                        {{ if .image }}
+                          <div class="rectangle-image-container faded-image">
+                            <img 
+                              src="{{ .image | relURL }}" 
+                              alt="{{ .year }}"
+                              class="rectangle-image"
+                            />
+                          </div>
+                        {{ end }}
+                      </div>
+                    </div>
+                    
+                    <!-- Content Column -->
+                    <div class="md:col-6 {{ if modBool $index 2 }}md:order-2{{ else }}md:order-1{{ end }}">
+                      <div class="timeline-content {{ if modBool $index 2 }}md:text-right md:pr-8{{ else }}md:text-left md:pl-8{{ end }}">
+                        <div class="timeline-year inline-block px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold mb-4">
+                          {{ .year }}
+                        </div>
+                        <h3 class="h4 mb-4">{{ .title | markdownify }}</h3>
+                        <p class="text-lg leading-relaxed">{{ .description | markdownify }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Timeline Line (for larger screens) -->
+                  <div class="timeline-line hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-border dark:bg-darkmode-border h-97vh"></div>
+                  <div class="timeline-dot hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white dark:border-darkmode-body"></div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
+{{ end }}

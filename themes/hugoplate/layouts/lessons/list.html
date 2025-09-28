@@ -1,0 +1,43 @@
+{{ define "main" }}
+<!-- Lessons Section -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="lg:col-12">
+        <!-- Lessons Heading -->
+        <div class="text-center mb-12">
+          <h2 class="h1 mb-4">{{ .Title | markdownify }}</h2>
+        </div>
+        
+        <!-- Lesson Types -->
+        <div class="lessons-container">
+          <div class="lesson-types-grid">
+            {{ range .Params.lesson_types }}
+              <div class="lesson-card">
+                <div class="lesson-card-content">
+                  <h3 class="lesson-title">{{ .name | markdownify }}</h3>
+                  <p class="lesson-price">{{ .price | markdownify }}</p>
+                  {{ if .description }}
+                    <p class="lesson-description text-sm mt-4">{{ .description | markdownify }}</p>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+        
+        <!-- Contact Information -->
+        {{ if .Params.contact_info }}
+          <div class="contact-info-section mt-16">
+            <div class="text-center">
+              <div class="contact-info-card">
+                <p class="contact-text">{{ .Params.contact_info | markdownify }}</p>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

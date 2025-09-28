@@ -1,0 +1,43 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "About"
+url = "/about"
+weight = 1
+
+[[main]]
+name = "Teachers"
+url = "/teachers"
+weight = 2
+
+[[main]]
+name = "Lessons"
+url = "/lessons"
+weight = 3
+
+[[main]]
+name = "Products"
+url = "/products"
+weight = 4
+
+[[main]]
+name = "Stage Hire"
+url = "/stage"
+weight = 5
+
+[[main]]
+name = "Contact"
+url = "/contact"
+weight = 6
+
+
+# footer menu
+[[footer]]
+name = "SAS-PERCUSSION"
+
+[[footer]]
+name = "162 Rooks Rd Nunawading VIC 3131"
+
+[[footer]]
+name = "Copyright © 2024 SAS-PERCUSSION - All Rights Reserved."
