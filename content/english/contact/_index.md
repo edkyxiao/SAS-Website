@@ -17,7 +17,7 @@ contact_sections:
       Julyforwhat  
       balldandy
 
-  - title: "SAS-PERCUSSION"
+  - title: "SAS PERCUSSION"
     content: |
       162 Rooks Rd Nunawading VIC 3131
 
