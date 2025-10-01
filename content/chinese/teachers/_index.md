@@ -33,7 +33,6 @@ teachers:
   - name: "萧见贤 - Edward Xiao"
     image: "/images/Edward.png"
     bio: |
-      **2016年** - 在Camberwell Girls Grammar School学习打击乐 师从Mat Duniam  
       **2018年** - 在Carey Baptist Grammar School学习打击乐 师从George Andrews  
       **2018年** - 跟随学校参加Victorian School Music Festival，并获得"Platinum Award"  
       **2019年** - 担任新金山交响乐团打击乐演奏员，并参与回国巡演  
