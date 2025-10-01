@@ -39,7 +39,7 @@ teachers:
       **2019** - Appointed Percussionist of the Xinjingshan Symphony Orchestra and participated in a performance tour in China  
       **2019** - Studied at the SAS Percussion Teaching & Research Studio under mentor Wang Di  
       **2022** - Featured as a soloist in the Melbourne National Percussion Concert  
-      **2023** - Furthered studies at Shenyang Conservatory of Music under percussion mentor Liu Shuai Zhang Youhan  
+      **2023** - Furthered studies at Shenyang Conservatory of Music under percussion instructors Liu Shuai, Zhang Youhan  
       **2024** - Appointed Principal Percussionist of the Xinjingshan Symphony Orchestra  
       **2025** - Performed in the third Melbourne National Percussion Concert under the guidance of mentor Wang Di
 
