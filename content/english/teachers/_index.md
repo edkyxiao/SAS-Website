@@ -34,7 +34,6 @@ teachers:
   - name: "萧见贤 - Edward Xiao"
     image: "/images/Edward.png"
     bio: |
-      **2016** - Studied percussion at Camberwell Girls Grammar School under Mat Duniam  
       **2018** - Studied percussion at Carey Baptist Grammar School under George Andrews  
       **2018** - Performed with the school at the Victorian School Music Festival and received the "Platinum Award"  
       **2019** - Appointed Percussionist of the Xinjingshan Symphony Orchestra and participated in a performance tour in China  
