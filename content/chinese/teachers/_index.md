@@ -47,8 +47,12 @@ teachers:
     bio: |
       简历即将更新...
 
-  - name: "Sean HX"
-    image: "/images/Logo.png"
+  - name: "侯翔 - Shawn Hou"
+    image: "/images/Shawn.png"
     bio: |
-      简历即将更新...
+      **2018年** - 毕业于RMIT graduate diploma of teaching 
+      **2022年** - 在SAS打击乐教研室从事架子鼓教学，中英文授课
+      **2025年** - 就读于Boxhill institute diploma of music （performance）
+      **2022年** - 在多支墨尔本乐队中担任鼓手
+      **2025年** - 加入新金山交响乐团打击乐声部
 ---
