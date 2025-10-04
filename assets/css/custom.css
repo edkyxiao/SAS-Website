@@ -159,9 +159,17 @@
     text-align: center !important;
   }
   
+  .teacher-photo-container {
+    width: 90vw;
+    height: 60vw; /* Maintain aspect ratio */
+    max-width: 500px;
+    max-height: 333px;
+  }
+  
   .teacher-photo {
-    width: 300px;
-    max-width: 90vw;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .teacher-content {
@@ -173,8 +181,15 @@
 }
 
 @media (max-width: 480px) {
+  .teacher-photo-container {
+    width: 90vw;
+    height: 60vw;
+  }
+  
   .teacher-photo {
-    width: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .teachers-container {
