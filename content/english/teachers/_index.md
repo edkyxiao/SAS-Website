@@ -51,9 +51,9 @@ teachers:
   - name: "侯翔 - Shawn Hou"
     image: "/images/Shawn.png"
     bio: |
-      2018 - Graduated from RMIT with a Graduate Diploma of Teaching
-      2022 - Taught drum set in the Percussion Department at SAS, delivering lessons in both Chinese and English
-      2025 - Studying Diploma of Music (Performance) at Box Hill Institute
-      2022 - Served as drummer in multiple Melbourne bands
-      2025 - Joined the percussion section of the Xinjingshan Symphony Orchestra
+      **2018** - Graduated from RMIT with a Graduate Diploma of Teaching
+      **2022** - Taught drum set in the Percussion Department at SAS, delivering lessons in both Chinese and English
+      **2025** - Studying Diploma of Music (Performance) at Box Hill Institute
+      **2022** - Served as drummer in multiple Melbourne bands
+      **2025** - Joined the percussion section of the Xinjingshan Symphony Orchestra
 ---
