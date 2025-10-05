@@ -32,6 +32,5 @@ contact_sections:
 
   - title: "邮箱"
     content: |
-      **一般咨询:** info@sasstudio.com.au  
-      **舞台租用:** saslivehouse@gmail.com
+      saslivehouse@gmail.com
 ---
