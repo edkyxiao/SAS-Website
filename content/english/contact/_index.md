@@ -32,6 +32,5 @@ contact_sections:
 
   - title: "Email"
     content: |
-      **General:** info@sasstudio.com.au  
-      **Stage Hire:** saslivehouse@gmail.com
+      saslivehouse@gmail.com
 ---
