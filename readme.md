@@ -17,19 +17,6 @@ Our studio is fully equipped with advanced percussion instruments and a professi
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions to enhance the SAS Percussion Studio website. To contribute:
-
-1. **Fork the Repository**.
-2. **Create a New Branch**: `git checkout -b feature/your-feature`.
-3. **Make Your Changes**.
-4. **Commit Your Changes**: `git commit -am 'Add new feature'`.
-5. **Push to the Branch**: `git push origin feature/your-feature`.
-6. **Create a New Pull Request**.
-
----
-
 ## ⚖️ Copyright
 
 Website design and development by Edward Xiao<br>
