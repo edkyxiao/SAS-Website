@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Diatype-bold';
+  src: url('../fonts/ABCDiatype-Bold-Trial.woff2') format('woff2'),
+       url('../fonts/ABCDiatype-Bold-Trial.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Diatype-light';
+  src: url('../fonts/ABCDiatype-Light-Trial.woff2') format('woff2'),
+       url('../fonts/ABCDiatype-Light-Trial.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
