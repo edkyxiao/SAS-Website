@@ -10,13 +10,13 @@ product_categories:
         image: "/images/drumsticks.png"
         price: "$80"
         show_price: false
-        link: "/products/drumsticks/"
+        link: 
         
       - name: "Marimba Mallets"
         image: "/images/b1.png"
         price: "$80"
         show_price: false
-        link: "/products/mallets/"
+        link: 
 
   - category_name: "Practice Pad and Kits"
     products:
@@ -24,31 +24,31 @@ product_categories:
         image: "/images/pad.png"
         price: "$140"
         show_price: false
-        link: "/products/pad/"
+        link: 
         
       - name: "Snare Drum Stand"
         image: "/images/stand.png"
         price: "$60"
         show_price: false
-        link: "/products/stand/"
+        link: 
         
       - name: "HAILUN Drum Kit - Battleship Series"
         image: "/images/logo_icon.png"
         price: "$1800"
         show_price: false
-        link: "/products/kit-battleship/"
+        link: 
         
       - name: "HAILUN Drum Kit - Studio Series"
         image: "/images/logo_icon.png"
         price: "$4100"
         show_price: false
-        link: "/products/kit-studio/"
+        link: 
         
       - name: "HAILUN Drum Kit - Artist Series"
-        image: "/images/logo_icon.png"
+        image: "/images/products/drums/kit-artist/front.png"
         price: "$7900"
         show_price: false
-        link: "/products/kit-artist/"
+        link: 
 
   - category_name: "Video Filming"
     products:
@@ -56,7 +56,7 @@ product_categories:
         image: "/images/filming.png"
         price: "$300"
         show_price: false
-        link: "/products/video/"
+        link: 
 
 contact_info: "For additional information and to purchase our products, please contact us at **WeChat: julyforwhat** or **balldandy**"
 ---
