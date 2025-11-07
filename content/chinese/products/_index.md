@@ -11,13 +11,13 @@ product_categories:
         image: "/images/drumsticks.png"
         price: "$80"
         show_price: false
-        link: "/zh/products/drumsticks/"
+        link:
         
       - name: "马林巴槌"
         image: "/images/b1.png"
         price: "$80"
         show_price: false
-        link: "/zh/products/mallets/"
+        link:
 
   - category_name: "哑鼓垫，架子鼓"
     products:
@@ -25,31 +25,31 @@ product_categories:
         image: "/images/pad.png"
         price: "$140"
         show_price: false
-        link: "/zh/products/pad/"
+        link: 
         
       - name: "军鼓架"
         image: "/images/stand.png"
         price: "$60"
         show_price: false
-        link: "/zh/products/stand/"
+        link:
         
       - name: "海伦架子鼓 - 战舰系列"
         image: "/images/logo_icon.png"
         price: "$1800"
         show_price: false
-        link: "/zh/products/kit-battleship/"
+        link:
         
       - name: "海伦架子鼓 - 录音室系列"
         image: "/images/logo_icon.png"
         price: "$4100"
         show_price: false
-        link: "/zh/products/kit-studio/"
+        link: 
         
       - name: "海伦架子鼓 - 艺术家系列"
-        image: "/images/logo_icon.png"
+        image: "/images/products/drums/kit-artist/front.png"
         price: "$7900"
         show_price: false
-        link: "/zh/products/kit-artist/"
+        link: 
 
   - category_name: "视频录制"
     products:
@@ -57,7 +57,7 @@ product_categories:
         image: "/images/filming.png"
         price: "$300"
         show_price: false
-        link: "/zh/products/video/"
+        link: 
 
 contact_info: "如需了解更多信息或购买我们的产品，请通过 **微信：julyforwhat** 或 **balldandy** 联系我们"
 ---
