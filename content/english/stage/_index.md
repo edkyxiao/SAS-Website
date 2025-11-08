@@ -8,7 +8,7 @@ description: "Our studio is equipped with top-tier stage and lighting equipment,
 stage_sections:
   - title: "Standard Pricing:"
     content: |
-      **2 hr/$300, $100 for each additional hour**
+      2 hr/$300, $100 for each additional hour
 
   - title: "Standard Equipment:"
     content: |
@@ -43,6 +43,5 @@ stage_sections:
 stage_images:
   light_image: "/images/stage_light.png"
   dark_image: "/images/stage_dark.png"
-  toggle_icon_light: "/images/black_sun_icon.png"
-  toggle_icon_dark: "/images/white_sun_icon.png"
+
 ---
