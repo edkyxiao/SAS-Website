@@ -9,7 +9,7 @@ description: "我们的演播厅使用了目前顶级的舞美设备品牌，适
 stage_sections:
   - title: "基础费用："
     content: |
-      **2 小时/$300，额外每小时/$100**
+      2 小时/$300，额外每小时/$100
 
   - title: "包含设备："
     content: |
