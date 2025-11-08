@@ -638,20 +638,27 @@
 
 .image-toggle-btn {
   position: absolute;
-  top: -60px; /* Position above the image */
-  right: 5px; /* Keep same horizontal position */
+  top: -40px; /* Position above the image */
+  right: -40px; /* Keep same horizontal position */
   background: rgba(0, 0, 0, 0.2);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  padding: 5px;
+  padding: 0;
   transition: all 0.3s ease;
   z-index: 10;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 .image-toggle-btn img {
