@@ -8,7 +8,7 @@ draft: false
 about_title: "About Us"
 about_image: "/images/hezhao.jpg"
 about_content: |
-  Chinese Percussion from the Shenyang Conservatory of Music. Based in Melbourne, Australia, it is one of the region's premier percussion studios, dedicated to developing high-level Chinese traditional percussion ensembles and Western percussion groups.<br><br>
+  SAS Percussion Studio, founded in 2018 is one of the Melbourne's premier percussion studios, dedicated to developing high-level Chinese traditional percussion ensembles and Western percussion groups.<br><br>
 
   Students of SAS Studio Percussion perform as percussionists in many of Melbourne's top schools and youth symphony orchestras. Over the years, SAS has held numerous large-scale concerts featuring both traditional Chinese and Western percussion, as well as intensive student-teacher performances and showcases.<br><br>
 
