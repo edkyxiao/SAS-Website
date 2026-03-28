@@ -3,7 +3,7 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="lg:col-12"> 
+      <div class="lg:col-12">
         <!-- Lessons Heading -->
         <div class="text-center mb-12">
           <h2 class="h1 mb-4">{{ .Title | markdownify }}</h2>
@@ -19,7 +19,7 @@
                 role="button"
                 tabindex="0"
                 aria-haspopup="dialog">
-              <template class="lesson-details-template">{{ .details }}</template>
+              <template class="lesson-details-template">{{ .details | jsonify}}</template>
                 <div class="lesson-card-content">
                   <h3 class="lesson-title">{{ .name | markdownify }}</h3>
                   <p class="lesson-price">{{ .price | markdownify }}</p>
@@ -55,6 +55,7 @@
     <button class="lesson-modal-close" aria-label="Close">&times;</button>
     <h3 id="modal-title" class="lesson-modal-name"></h3>
     <p class="lesson-modal-price"></p>
+    <div class="lesson-modal-details"></div>
     <div class="lesson-modal-details"></div>
       <a href="/contact" class="lesson-modal-contact-btn">Get in touch →</a>
   </div>
@@ -159,7 +160,8 @@
       modalName.textContent = card.dataset.lessonName;
       modalPrice.textContent = card.dataset.lessonPrice;
       const template = card.querySelector('.lesson-details-template');
-      modalDetails.innerHTML = template ? template.innerHTML.replace(/\n/g, '<br>') : '';
+      const raw = template ? JSON.parse(template.innerHTML.trim()) : '';
+      modalDetails.innerHTML = raw.replace(/\n/g, '<br>');
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
       closeBtn.focus();
