@@ -32,5 +32,5 @@ contact_sections:
 
   - title: "Email"
     content: |
-      saslivehouse@gmail.com
+      edkyxiao@gmail.com
 ---
