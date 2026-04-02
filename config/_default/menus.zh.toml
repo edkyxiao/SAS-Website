@@ -22,6 +22,18 @@ url = "/zh/products"
 weight = 4
 
 [[main]]
+name = "促销产品"
+url = "/products/sale"
+weight = 1
+parent = "产品"
+
+[[main]]
+name = "租赁产品"
+url = "/products/rental"
+weight = 2
+parent = "产品"
+
+[[main]]
 name = "舞台"
 url = "/zh/stage"
 weight = 5
