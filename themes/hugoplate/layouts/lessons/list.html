@@ -89,8 +89,14 @@
     z-index: 1000;
     padding: 1rem;
   }
-  .lesson-modal-overlay[hidden] {
-    display: none;
+  .lesson-modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .lesson-modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
   }
 
   /* Modal box */
@@ -156,21 +162,25 @@
     const modalDetails = modal.querySelector('.lesson-modal-details');
     const closeBtn = modal.querySelector('.lesson-modal-close');
 
-    function openModal(card) {
-      modalName.textContent = card.dataset.lessonName;
-      modalPrice.textContent = card.dataset.lessonPrice;
-      const template = card.querySelector('.lesson-details-template');
-      const raw = template ? JSON.parse(template.innerHTML.trim()) : '';
-      modalDetails.innerHTML = raw.replace(/\n/g, '<br>');
-      modal.hidden = false;
-      document.body.style.overflow = 'hidden';
-      closeBtn.focus();
-    }
+  function openModal(card) {
+    modalName.textContent = card.dataset.lessonName;
+    modalPrice.textContent = card.dataset.lessonPrice;
+    const template = card.querySelector('.lesson-details-template');
+    const raw = template ? JSON.parse(template.innerHTML.trim()) : '';
+    modalDetails.innerHTML = raw.replace(/\n/g, '<br>');
+    modal.hidden = false;
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
 
-    function closeModal() {
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.addEventListener('transitionend', () => {
       modal.hidden = true;
       document.body.style.overflow = '';
-    }
+    }, { once: true });
+  }
 
     // Open on click or Enter/Space keypress
     document.querySelectorAll('.lesson-card--clickable').forEach(function (card) {
