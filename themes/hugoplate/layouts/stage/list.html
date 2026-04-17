@@ -53,7 +53,10 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                   </svg>
                 </button>
-                <img id="mode-image" src="{{ .Params.stage_images.light_image | relURL }}" alt="stage lighting" class="stage-main-image" />
+                <div class="image-wrapper-stage">
+                  <img id="image-light" src="/images/stage_light.png" class="stage-image visible">
+                  <img id="image-dark" src="/images/stage_dark.png" class="stage-image">
+                </div>
               </div>
             </div>
           {{ end }}
@@ -116,7 +119,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   margin-bottom: 3rem;
 }
 
