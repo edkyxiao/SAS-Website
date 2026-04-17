@@ -617,7 +617,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center; 
-  align-items: center; 
+  align-items: top; 
   min-width: 300px;
   position: relative;
 }
@@ -628,16 +628,37 @@
   width: 100%;
 }
 
+.image-wrapper-stage {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.stage-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.stage-image.visible {
+  opacity: 1;
+}
+
 .stage-main-image {
   width: 100%;
   height: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1;
+  transition: opacity 1s ease;
+  opacity: 1
 }
 
 .image-toggle-btn {
   position: absolute;
+  margin-top: 2rem;
   top: -40px; /* Position above the image */
   right: -40px; /* Keep same horizontal position */
   background: rgba(0, 0, 0, 0.2);
