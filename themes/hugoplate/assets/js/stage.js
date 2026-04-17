@@ -1,25 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const image = document.getElementById('mode-image');
-  const button = document.getElementById('toggle-image-mode');
-  const buttonImage = document.getElementById('button-icon');
-  
-  if (image && button && buttonImage) {
-    let isLight = true;
-    
-    button.addEventListener('click', function() {
-      // Fade out the image
-      image.style.opacity = '0';
-      
-      setTimeout(() => {
-        // Change main image
-        image.src = isLight ? '/images/stage_dark.png' : '/images/stage_light.png';
-        // Change button icon image
-        buttonImage.src = isLight ? '/images/white_sun_icon.png' : '/images/black_sun_icon.png';
-        // Fade back in
-        image.style.opacity = '1';
-        // Toggle state
-        isLight = !isLight;
-      }, 300);
-    });
-  }
-});
+(function() {
+  const toggleBtn = document.getElementById('toggle-image-mode');
+  const lightImg = document.getElementById('image-light');
+  const darkImg = document.getElementById('image-dark');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  if (!toggleBtn || !lightImg || !darkImg || !sunIcon || !moonIcon) return;
+
+  let isDark = false;
+
+  toggleBtn.addEventListener('click', function() {
+    isDark = !isDark;
+
+    if (isDark) {
+      lightImg.classList.remove('visible');
+      darkImg.classList.add('visible');
+
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    } else {
+      darkImg.classList.remove('visible');
+      lightImg.classList.add('visible');
+
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    }
+  });
+})();
