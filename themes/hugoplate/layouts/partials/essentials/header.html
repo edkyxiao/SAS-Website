@@ -37,16 +37,27 @@
         {{ $active := eq $menuURL $pageURL }}
         {{ if .HasChildren }}
           <li class="nav-item nav-dropdown group relative">
-            <span
-              class="nav-link text-xl {{ range .Children }}
+            <a
+              class="nav-link text-xl {{ if $active }}active{{ end }} {{ range .Children }}
                 {{ $childURL := .URL | absLangURL }}
-                {{ $active := eq $childURL $pageURL }}
-                {{ if $active }}active{{ end }}
-              {{ end }}">
+                {{ $childActive := eq $childURL $pageURL }}
+                {{ if $childActive }}active{{ end }}
+              {{ end }}"
+              {{ if findRE `^http` .URL }}
+                target="_blank" rel="noopener"
+              {{ end }}
+              href="{{- if findRE `^#` .URL -}}
+                {{- if not $.IsHome -}}
+                  {{- site.Home.RelPermalink -}}
+                {{- end }}
+                {{- .URL -}}
+              {{- else -}}
+                {{- .URL | relLangURL -}}
+              {{- end -}}">
               {{ .Name }}
-            </span>
+            </a>
             <ul
-              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              class="nav-dropdown-list border border-gray-200 dark:border-gray-700 lg:group-hover:visible lg:group-hover:opacity-100">
               {{ range .Children }}
                 {{ $childURL := .URL | absLangURL }}
                 {{ $active := eq $childURL $pageURL }}
