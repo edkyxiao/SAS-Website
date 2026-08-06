@@ -44,10 +44,9 @@
 
       const setActive = (index) => {
         dots.forEach((d, i) => {
-            d.classList.toggle('bg-primary', i === index);
-            d.classList.toggle('dark:bg-darkmode-primary', i === index);
-            d.classList.toggle('bg-border', i !== index);
-            d.classList.toggle('dark:bg-darkmode-border', i !== index);
+          d.style.backgroundColor = i === index ? 'rgb(155, 146, 102)' : '';
+          d.classList.toggle('bg-black/20', i !== index);
+          d.classList.toggle('dark:bg-white/30', i !== index);
         });
       };
       setActive(0);
