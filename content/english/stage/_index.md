@@ -1,6 +1,6 @@
 ---
-title: "Stage Hire"
-meta_title: "Stage Hire"
+title: "Livehouse Hire"
+meta_title: "Livehouse Hire"
 draft: false
 
 description: "Our studio is equipped with top-tier stage and lighting equipment, ideal for small-scale performances such as student showcases, 3–4 person dance shows, live music video shoots, online streaming, and band rehearsals. It can accommodate an audience of 25 to 35 people."
