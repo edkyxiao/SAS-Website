@@ -1,0 +1,75 @@
+{{ define "main" }}
+<section class="section pb-16 pt-28 lg:pt-32">
+  <div class="container">
+    <header class="mb-12 text-center">
+      <h1 class="h1 mb-4">{{ .Title }}</h1>
+      {{ with .Params.description }}
+        <p class="text-lg text-text-light dark:text-darkmode-text-light">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    {{ range .Pages.ByWeight }}
+      {{ partial "components/carousel.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+<style>
+  [data-carousel-track] { scrollbar-width: none; -ms-overflow-style: none; }
+  [data-carousel-track]::-webkit-scrollbar { display: none; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const track = carousel.querySelector('[data-carousel-track]');
+      const slides = Array.from(track.children);
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      const dotsWrap = carousel.querySelector('[data-carousel-dots]');
+
+      if (dotsWrap) {
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'h-2.5 w-2.5 rounded-full bg-border dark:bg-darkmode-border transition-colors';
+          dot.setAttribute('aria-label', `Go to image ${i + 1}`);
+          dot.addEventListener('click', () => {
+            slides[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+          });
+          dotsWrap.appendChild(dot);
+        });
+      }
+      const dots = dotsWrap ? Array.from(dotsWrap.children) : [];
+
+      const setActive = (index) => {
+        dots.forEach((d, i) => {
+            d.classList.toggle('bg-primary', i === index);
+            d.classList.toggle('dark:bg-darkmode-primary', i === index);
+            d.classList.toggle('bg-border', i !== index);
+            d.classList.toggle('dark:bg-darkmode-border', i !== index);
+        });
+      };
+      setActive(0);
+
+      if (slides.length > 1) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const index = slides.indexOf(entry.target);
+                if (index > -1) setActive(index);
+              }
+            });
+          },
+          { root: track, threshold: 0.6 }
+        );
+        slides.forEach((slide) => observer.observe(slide));
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+      if (nextBtn) nextBtn.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+    });
+  });
+</script>
+{{ end }}
