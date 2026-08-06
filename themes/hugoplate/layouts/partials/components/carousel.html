@@ -1,0 +1,52 @@
+{{ $images := .Resources.ByType "image" }}
+<section class="mb-16 last:mb-0">
+  <div class="mb-4">
+    <h2 class="text-2xl md:text-3xl font-bold font-secondary text-text-dark dark:text-darkmode-text-dark">{{ .Title }}</h2>
+    {{ with .Params.subtitle }}
+      <p class="mt-1 text-text-light dark:text-darkmode-text-light">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  {{ if $images }}
+    <div class="relative" data-carousel>
+      <div
+        data-carousel-track
+        class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory rounded-lg">
+        {{ range $images }}
+          <div class="shrink-0 w-full snap-start h-[280px] md:h-[420px] rounded-lg overflow-hidden border border-border dark:border-darkmode-border bg-light dark:bg-darkmode-light flex items-center justify-center">
+            {{ $img := .Resize "1600x webp q85" }}
+            <img
+              src="{{ $img.RelPermalink }}"
+              width="{{ $img.Width }}"
+              height="{{ $img.Height }}"
+              alt="{{ $.Title }}"
+              loading="lazy"
+              class="max-w-full max-h-full w-auto h-auto object-contain" />
+          </div>
+        {{ end }}
+      </div>
+
+      {{ if gt (len $images) 1 }}
+        <button
+          data-carousel-prev
+          type="button"
+          aria-label="Previous image"
+          class="absolute left-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-dark/60 text-white hover:bg-primary dark:hover:bg-darkmode-primary dark:hover:text-text-dark transition-colors">
+          <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 010 1.06L9.06 10l3.73 3.71a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" clip-rule="evenodd"/></svg>
+        </button>
+        <button
+          data-carousel-next
+          type="button"
+          aria-label="Next image"
+          class="absolute right-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-dark/60 text-white hover:bg-primary dark:hover:bg-darkmode-primary dark:hover:text-text-dark transition-colors">
+          <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 010-1.06L10.94 10 7.21 6.29a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z" clip-rule="evenodd"/></svg>
+        </button>
+        <div data-carousel-dots class="mt-3 flex justify-center gap-2"></div>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="text-sm text-text-light dark:text-darkmode-text-light italic">
+      No images added yet — drop some into this event's folder.
+    </p>
+  {{ end }}
+</section>
