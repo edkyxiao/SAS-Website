@@ -18,6 +18,7 @@ weight = 3
 
 [[main]]
 name = "Products"
+url = "/products/sale"
 weight = 4
 
 [[main]]
@@ -33,9 +34,21 @@ weight = 2
 parent = "Products"
 
 [[main]]
-name = "Stage Hire"
+name = "Livehouse"
 url = "/stage"
 weight = 5
+
+[[main]]
+name = "Livehouse Hire"
+url = "/stage"
+weight = 1
+parent = "Livehouse"
+
+[[main]]
+name = "Past Event Images"
+url = "/stage/pastevents"
+weight = 2
+parent = "Livehouse"
 
 [[main]]
 name = "Contact"
