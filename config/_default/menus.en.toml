@@ -35,7 +35,7 @@ parent = "Products"
 
 [[main]]
 name = "Livehouse"
-url = "/stage"
+url = "/livehouse"
 weight = 5
 
 [[main]]
