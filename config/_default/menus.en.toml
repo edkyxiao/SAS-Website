@@ -39,18 +39,6 @@ url = "/stage"
 weight = 5
 
 [[main]]
-name = "Livehouse Hire"
-url = "/stage"
-weight = 1
-parent = "Livehouse"
-
-[[main]]
-name = "Past Event Images"
-url = "/stage/pastevents"
-weight = 2
-parent = "Livehouse"
-
-[[main]]
 name = "Contact"
 url = "/contact"
 weight = 6
