@@ -62,7 +62,7 @@
           {{ end }}
         </div>
 
-        <!-- Bottom Row: Additional Equipment and Additional Services -->
+        <!-- Bottom Row: Additional Equipment, Additional Services, Contact Details, Past Events Carousel -->
         <div class="stage-bottom-row">
           {{ range after 2 .Params.stage_sections }}
             <div class="stage-section">
@@ -72,39 +72,195 @@
               </div>
             </div>
           {{ end }}
+
+          <!-- Past Events Carousel -->
+          {{ $allImages := slice }}
+          {{ with site.GetPage "stage/pastevents" }}
+            {{ range .Pages.ByWeight }}
+              {{ $event := . }}
+              {{ range .Resources.ByType "image" }}
+                {{ $allImages = $allImages | append (dict "img" . "event" $event.Title) }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+
+          <div class="stage-section past-events-section">
+            <h3 class="stage-section-title">Past Events</h3>
+            {{ if $allImages }}
+              <div class="pe-carousel" data-pe-carousel>
+                {{ range $i, $entry := $allImages }}
+                  {{ $thumb := $entry.img.Resize "800x webp q80" }}
+                  {{ $full := $entry.img.Resize "1920x webp q88" }}
+                  <div
+                    class="pe-slide {{ if eq $i 0 }}pe-slide-active{{ end }}"
+                    data-pe-slide
+                    data-full="{{ $full.RelPermalink }}"
+                    role="button"
+                    tabindex="0"
+                    aria-label="View larger image from {{ $entry.event }}">
+                    <img src="{{ $thumb.RelPermalink }}" loading="lazy" alt="{{ $entry.event }}" />
+                  </div>
+                {{ end }}
+              </div>
+            {{ else }}
+              <p class="stage-section-content">Photos coming soon.</p>
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Lightbox (single instance, shared by all slides) -->
+<div class="pe-lightbox" data-pe-lightbox aria-hidden="true">
+  <button class="pe-lightbox-close" data-pe-close aria-label="Close">&times;</button>
+  <button class="pe-lightbox-nav pe-lightbox-prev" data-pe-prev aria-label="Previous photo">&#10094;</button>
+  <div class="pe-lightbox-content">
+    <img class="pe-lightbox-img" data-pe-lightbox-img src="" alt="" />
+    <div class="pe-lightbox-dots" data-pe-lightbox-dots></div>
+  </div>
+  <button class="pe-lightbox-nav pe-lightbox-next" data-pe-next aria-label="Next photo">&#10095;</button>
+</div>
+
 <script>
 (function() {
   const toggleBtn = document.getElementById('toggle-image-mode');
-  const modeImage = document.getElementById('mode-image');
+  const lightImg = document.getElementById('image-light');
+  const darkImg = document.getElementById('image-dark');
   const sunIcon = document.getElementById('sun-icon');
   const moonIcon = document.getElementById('moon-icon');
-  
-  if (!toggleBtn || !modeImage || !sunIcon || !moonIcon) return;
-  
-  // Get image URLs from the img element's src
-  const lightImage = '{{ .Params.stage_images.light_image | relURL }}';
-  const darkImage = '{{ .Params.stage_images.dark_image | relURL }}';
-  
+
+  if (!toggleBtn || !lightImg || !darkImg || !sunIcon || !moonIcon) return;
+
   let isDark = false;
-  
+
   toggleBtn.addEventListener('click', function() {
     isDark = !isDark;
-    
-    if (isDark) {
-      modeImage.src = darkImage;
-      sunIcon.style.display = 'none';
-      moonIcon.style.display = 'block';
-    } else {
-      modeImage.src = lightImage;
-      sunIcon.style.display = 'block';
-      moonIcon.style.display = 'none';
+    lightImg.classList.toggle('visible', !isDark);
+    darkImg.classList.toggle('visible', isDark);
+    sunIcon.style.display = isDark ? 'none' : 'block';
+    moonIcon.style.display = isDark ? 'block' : 'none';
+  });
+})();
+</script>
+
+<script>
+(function() {
+  const carousel = document.querySelector('[data-pe-carousel]');
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('[data-pe-slide]'));
+  if (!slides.length) return;
+
+  let current = 0;
+  const AUTO_DELAY = 5000;
+  let autoTimer = null;
+
+  const showSlide = (index) => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('pe-slide-active', i === current));
+  };
+
+  const startAuto = () => {
+    stopAuto();
+    if (slides.length > 1) {
+      autoTimer = setInterval(() => showSlide(current + 1), AUTO_DELAY);
     }
+  };
+  const stopAuto = () => {
+    if (autoTimer) clearInterval(autoTimer);
+    autoTimer = null;
+  };
+
+  startAuto();
+
+  // Lightbox
+  const lightbox = document.querySelector('[data-pe-lightbox]');
+  const lightboxImg = lightbox.querySelector('[data-pe-lightbox-img]');
+  const closeBtn = lightbox.querySelector('[data-pe-close]');
+  const prevBtn = lightbox.querySelector('[data-pe-prev]');
+  const nextBtn = lightbox.querySelector('[data-pe-next]');
+  let lbIndex = 0;
+
+  // Build one dot per slide
+  const dotsWrap = lightbox.querySelector('[data-pe-lightbox-dots]');
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'pe-lightbox-dot';
+    dot.setAttribute('aria-label', `Go to photo ${i + 1}`);
+    dot.addEventListener('click', () => setLightboxImage(i));
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  const setLightboxImage = (index) => {
+    lbIndex = (index + slides.length) % slides.length;
+    const slide = slides[lbIndex];
+    const nextSrc = slide.dataset.full;
+    const nextAlt = slide.querySelector('img').alt;
+
+    dots.forEach((d, i) => d.classList.toggle('pe-lightbox-dot-active', i === lbIndex));
+
+    const swap = () => {
+      lightboxImg.src = nextSrc;
+      lightboxImg.alt = nextAlt;
+      lightboxImg.style.opacity = '1';
+    };
+
+    lightboxImg.style.opacity = '0';
+
+    const preloader = new Image();
+    preloader.src = nextSrc;
+
+    if (preloader.complete) {
+      window.setTimeout(swap, 300);
+    } else {
+      preloader.onload = () => {
+        window.setTimeout(swap, 300);
+      };
+    }
+  };
+
+  const openLightbox = (index) => {
+    setLightboxImage(index);
+    lightbox.classList.add('pe-lightbox-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    stopAuto();
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('pe-lightbox-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    startAuto();
+  };
+
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => openLightbox(i));
+    slide.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(i);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', () => setLightboxImage(lbIndex - 1));
+  nextBtn.addEventListener('click', () => setLightboxImage(lbIndex + 1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('pe-lightbox-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') setLightboxImage(lbIndex - 1);
+    if (e.key === 'ArrowRight') setLightboxImage(lbIndex + 1);
   });
 })();
 </script>
@@ -136,6 +292,134 @@
   margin-top: 2rem;
 }
 
+/* Past events crossfade carousel */
+.pe-carousel {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(69, 68, 68, 0.45);
+  transition: transform 0.3s ease;
+}
+
+.pe-carousel:hover {
+  transform: scale(1.05);
+}
+
+.pe-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  cursor: pointer;
+}
+
+.pe-slide-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.pe-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lightbox */
+.pe-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.pe-lightbox-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pe-lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.pe-lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pe-lightbox-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pe-lightbox-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease;
+}
+
+.pe-lightbox-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.pe-lightbox-dot-active {
+  background: rgb(191, 182, 137);
+}
+
+.pe-lightbox-close,
+.pe-lightbox-nav {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.pe-lightbox-close:hover,
+.pe-lightbox-nav:hover {
+  background: rgba(191, 182, 137, 0.5);
+}
+
+.pe-lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.pe-lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+}
+
+.pe-lightbox-prev { left: 1.5rem; }
+.pe-lightbox-next { right: 1.5rem; }
 </style>
 {{ end }}
-
