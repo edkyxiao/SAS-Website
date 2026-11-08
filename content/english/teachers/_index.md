@@ -42,6 +42,7 @@ teachers:
       **2023** - Furthered studies at Shenyang Conservatory of Music under percussion instructors Liu Shuai, Zhang Youhan  
       **2024** - Appointed Principal Percussionist of the Xinjingshan Symphony Orchestra  
       **2025** - Performed in the third Melbourne National Percussion Concert under the guidance of mentor Wang Di
+      **2026** - Served as the Principal Percussionist of the Xinjingshan Symphony Orchestra  
 
   - name: "王嘉豪 - Ryan Wang"
     image: "/images/Logo.png"
