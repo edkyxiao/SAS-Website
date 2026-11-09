@@ -8,7 +8,7 @@ description: "Our studio is equipped with top-tier stage and lighting equipment,
 stage_sections:
   - title: "Standard Pricing:"
     content: |
-      2 hr/$300, $100 for each additional hour
+      $800/day
 
   - title: "Standard Equipment:"
     content: |
